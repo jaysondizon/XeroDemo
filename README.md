@@ -33,7 +33,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Running the tests
 
-1. Before running the test, configure the directory of your your chromedriver.exe.
+1. Before running the test, configure the directory of your chromedriver.exe.
 You can edit it by opening SeleniumCucumberBDDFramework\src\com\testautomation\Utility\Utility.java
 ```
 	// Chrome driver directory
