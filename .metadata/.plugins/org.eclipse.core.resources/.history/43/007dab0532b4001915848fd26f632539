@@ -1,0 +1,7 @@
+AuthKey=123456
+baseURL=https://www.xero.com/au/
+Email=john.doe@gmail.com
+Password=jdp@ss123
+DesiredOrganisation=Demo Company (AU)
+AccountName=Sample Bank Account
+AccountNumber=111222333444

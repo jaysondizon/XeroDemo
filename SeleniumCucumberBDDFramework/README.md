@@ -67,7 +67,7 @@ Password=jdp@ss123
 ```
 You do not need to change the baseURL.
 ```
-baseURL=https://www.xero.com/au/
+baseURL=https://www.xero.com
 
 ```
 

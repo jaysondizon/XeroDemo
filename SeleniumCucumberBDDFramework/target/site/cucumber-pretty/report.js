@@ -49,35 +49,35 @@ formatter.match({
   "location": "AddBankAccountStepDef.user_has_a_valid_Log_in_credentials()"
 });
 formatter.result({
-  "duration": 32758990236,
+  "duration": 26441904862,
   "status": "passed"
 });
 formatter.match({
   "location": "AddBankAccountStepDef.choose_the_desired_Organisation()"
 });
 formatter.result({
-  "duration": 45225991,
+  "duration": 5569584330,
   "status": "passed"
 });
 formatter.match({
   "location": "AddBankAccountStepDef.adding_ANZ_NZ_bank_account_details()"
 });
 formatter.result({
-  "duration": 11563620604,
+  "duration": 8506738123,
   "status": "passed"
 });
 formatter.match({
   "location": "AddBankAccountStepDef.bank_account_successfully_added()"
 });
 formatter.result({
-  "duration": 3426164956,
+  "duration": 1945480737,
   "status": "passed"
 });
 formatter.match({
   "location": "AddBankAccountStepDef.bank_account_details_shown_in_Bank_Accounts_page()"
 });
 formatter.result({
-  "duration": 707717896,
+  "duration": 555947971,
   "status": "passed"
 });
 });
