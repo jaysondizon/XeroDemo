@@ -2,12 +2,12 @@
 
 This is a solution for the Coding Exercise - QA Analyst with below User Story.
 It is written in java and gherkin in Cucumber and TestNG Framework using Selenium Webdriver in Google Chrome browser
-
+```
 User Story
 As a Xero User,
 In order to manage my business successfully,
-I want to be able to add an ìANZ (NZ)î bank account inside any Xero Organisation.
-
+I want to be able to add an ‚ÄúANZ (NZ)‚Äù bank account inside any Xero Organisation.
+```
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -15,12 +15,10 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 ```
-Give examples
 1. Download Eclipse IDE for Java Developers Version: 2018-09 (4.9.0) (used in this environment)
 2. Install Java SE 12 JDK (used in this environment)
 3. Configure Environment variables for system variable and system path
 4. Download Google Chrome webdriver (chromedriver.exe).
- 
 ```
 
 ### Environment Setup
@@ -31,7 +29,6 @@ Give examples
 3. Proceed to WorkBench to be able to use workspace resources.
 4. Right click on the Package Explorer window and click Import to import the whole project that has been checked-out on step 1.
 5. After all the files has been loaded, you are now ready to execute the test.
-
 ```
 
 ## Running the tests
@@ -69,6 +66,10 @@ Email=john.doe@gmail.com
 Password=jdp@ss123
 ```
 You do not need to change the baseURL.
+```
+baseURL=https://www.xero.com/au/
+
+```
 
 Configure the other properties.
 Change this if you have a different Organization
