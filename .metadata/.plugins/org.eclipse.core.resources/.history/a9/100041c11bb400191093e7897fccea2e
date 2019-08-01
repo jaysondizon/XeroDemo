@@ -1,0 +1,15 @@
+package com.testautomation.Utility;
+
+public class Utility {
+
+	public static String envPropertDir() {
+		String envPropertDir = "E:\\SeleniumCucumberBDDFramework\\SeleniumCucumberBDDFramework\\resources\\envconfig.properties";
+		return envPropertDir;
+	}
+
+	public static String chromeDir() {
+		String chromeDir = "C:\\Training\\chromedriver.exe";
+		return chromeDir;
+	}
+
+}

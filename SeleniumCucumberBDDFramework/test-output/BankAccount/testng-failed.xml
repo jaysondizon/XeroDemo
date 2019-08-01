@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BankAccount]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="AddBankAccount(failed)">
+    <classes>
+      <class name="com.testautomation.TestRunner.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.testautomation.TestRunner.TestRunner -->
+    </classes>
+  </test> <!-- AddBankAccount(failed) -->
+</suite> <!-- Failed suite [BankAccount] -->

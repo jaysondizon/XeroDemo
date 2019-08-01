@@ -1,0 +1,9 @@
+package com.testautomation.Utility;
+
+public class EnvPropertyDir {
+
+	public static String envpropertdir() {
+	String envpropertdir= "E:\\SeleniumCucumberBDDFramework\\SeleniumCucumberBDDFramework\\resources\\envconfig.properties";
+    return envpropertdir;
+	}
+}

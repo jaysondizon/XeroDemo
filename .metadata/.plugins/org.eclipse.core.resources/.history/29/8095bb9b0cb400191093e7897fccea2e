@@ -1,0 +1,83 @@
+package com.testautomation.StepDef;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+
+
+import cucumber.api.java.en.Given;
+
+public class AddBankAccountStepDef {
+
+	// Creating reference variable of Webdriver
+	public static WebDriver driver;
+
+	// Creating reference variable of Preperties
+	Properties value = new Properties();
+
+	@Given("^User has a valid Log-in credentials$")
+	public void user_has_a_valid_Log_in_credentials() throws Throwable {
+
+		// Setting environment properties
+		FileInputStream inputFile = new FileInputStream("E:\\Xero_Demo\\Xero\\src\\test\\java\\files\\env.properties");
+		value.load(inputFile);
+
+		// Setting up the properties for Chrome Driver
+		System.setProperty("webdriver.chrome.driver", "C:\\Training\\chromedriver.exe");
+
+		// Inserting Chromedriver to Webdriver reference object
+		driver = new ChromeDriver();
+
+		// Maximizing the browser window
+		driver.manage().window().maximize();
+
+		// Providing wait to load all the elements on page
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		// Passing the URL
+		driver.get(value.getProperty("URL"));
+
+		// Navigate to Log-in page
+		driver.findElement(By.partialLinkText("Login")).click();
+
+		// Passing valid credentials
+		driver.findElement(By.id("email")).sendKeys(value.getProperty("Email"));
+		driver.findElement(By.id("password")).sendKeys(value.getProperty("Password"));
+		driver.findElement(By.id("submitButton")).click();
+
+		// Complete authentication
+		driver.findElement(By.xpath("//input[@placeholder='Authentication code']"))
+				.sendKeys(value.getProperty("AuthKey"));
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+	}
+
+	@Given("^Choose the desired Organisation$")
+	public void choose_the_desired_Organisation() throws Throwable {
+
+		// Checking the current organisation
+		String currentOrg = driver.findElement(By.xpath("//span[@class='xrh-appbutton--text']")).getText();
+		String targetOrg = "Demo Company (AU)";
+
+		// Checking if the current organisation is the target organisation
+		if (targetOrg.equals(currentOrg)) {
+			System.out.println("On target organisation: " + targetOrg);
+		}
+
+		else {
+			System.out.println("Not on target organisation: " + currentOrg);
+			driver.findElement(By.cssSelector(".xrh-appbutton--body")).click();
+			driver.findElement(By.linkText(targetOrg)).click();
+			String finalOrg = driver.findElement(By.xpath("//span[@class='xrh-appbutton--text']")).getText();
+			System.out.println("Change to target organisation: " + finalOrg);
+			Assert.assertEquals(targetOrg.equals(finalOrg), true);
+		}
+
+	}
+
+}

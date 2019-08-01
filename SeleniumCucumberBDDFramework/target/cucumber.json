@@ -1,0 +1,88 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 8,
+        "name": "Add an ANZ (NZ) bank account in desired Xero Organisation",
+        "description": "",
+        "id": "add-a-bank-account;add-an-anz-(nz)-bank-account-in-desired-xero-organisation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 32758990236,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User has a valid Log-in credentials",
+            "match": {
+              "location": "AddBankAccountStepDef.user_has_a_valid_Log_in_credentials()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 45225991,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Choose the desired Organisation",
+            "match": {
+              "location": "AddBankAccountStepDef.choose_the_desired_Organisation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11563620604,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Adding ANZ (NZ) bank account details",
+            "match": {
+              "location": "AddBankAccountStepDef.adding_ANZ_NZ_bank_account_details()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3426164956,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Bank account successfully added",
+            "match": {
+              "location": "AddBankAccountStepDef.bank_account_successfully_added()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 707717896,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Bank account details shown in Bank Accounts page",
+            "match": {
+              "location": "AddBankAccountStepDef.bank_account_details_shown_in_Bank_Accounts_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Add a Bank Account",
+    "description": "\r\nAs a Xero User,\r\nIn order to manage my business successfully,\r\nI want to be able to add an “ANZ (NZ)” bank account inside any Xero Organisation.",
+    "id": "add-a-bank-account",
+    "keyword": "Feature",
+    "uri": "AddBankAccount.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@AddBankAccountTesting"
+      }
+    ]
+  }
+]

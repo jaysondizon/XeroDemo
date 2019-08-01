@@ -1,0 +1,141 @@
+package com.testautomation.StepDef;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class AddBankAccountStepDef {
+
+	// Creating reference variable of Webdriver
+	public static WebDriver driver;
+
+	// Creating reference variable of Preperties
+	Properties value = new Properties();
+
+	@Given("^User has a valid Log-in credentials$")
+	public void user_has_a_valid_Log_in_credentials() throws Throwable {
+
+		// Setting environment properties
+		FileInputStream inputFile = new FileInputStream("E:\\SeleniumCucumberBDDFramework\\SeleniumCucumberBDDFramework\\resources\\envconfig.properties");
+		value.load(inputFile);
+
+		// Setting up the properties for Chrome Driver
+		System.setProperty("webdriver.chrome.driver", "C:\\Training\\chromedriver.exe");
+
+		// Inserting Chromedriver to Webdriver reference object
+		driver = new ChromeDriver();
+
+		// Maximizing the browser window
+		driver.manage().window().maximize();
+
+		// Providing wait to load all the elements on page
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		// Passing the URL
+		driver.get(value.getProperty("URL"));
+
+		// Navigate to Log-in page
+		driver.findElement(By.partialLinkText("Login")).click();
+
+		// Passing valid credentials
+		driver.findElement(By.id("email")).sendKeys(value.getProperty("Email"));
+		driver.findElement(By.id("password")).sendKeys(value.getProperty("Password"));
+		driver.findElement(By.id("submitButton")).click();
+
+		// Complete authentication
+		driver.findElement(By.xpath("//input[@placeholder='Authentication code']"))
+				.sendKeys(value.getProperty("AuthKey"));
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+	}
+
+	@Given("^Choose the desired Organisation$")
+	public void choose_the_desired_Organisation() throws Throwable {
+
+		// Checking the current organisation
+		String currentOrg = driver.findElement(By.xpath("//span[@class='xrh-appbutton--text']")).getText();
+
+		// Checking if the current organisation is the target organisation
+		if (value.getProperty("DesiredOrganisation").equals(currentOrg)) {
+			System.out.println("On target organisation: " + value.getProperty("DesiredOrganisation"));
+		}
+
+		else {
+			System.out.println("Not on target organisation: " + currentOrg);
+			driver.findElement(By.cssSelector(".xrh-appbutton--body")).click();
+			driver.findElement(By.linkText(value.getProperty("DesiredOrganisation"))).click();
+			String finalOrg = driver.findElement(By.xpath("//span[@class='xrh-appbutton--text']")).getText();
+			System.out.println("Change to target organisation: " + finalOrg);
+			Assert.assertEquals(value.getProperty("DesiredOrganisation").equals(finalOrg), true);
+		}
+
+	}
+
+	@When("^Adding ANZ \\(NZ\\) bank account details$")
+	public void adding_ANZ_NZ_bank_account_details() throws Throwable {
+
+		// Navigate to Bank Accounts page
+		driver.findElement(By.xpath("//button[contains(text(),'Accounting')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Bank accounts')]")).click();
+
+		// Count the number of existing Bank Accounts
+		int initialBankAccounts = driver.findElements(By.cssSelector(".bank")).size();
+		System.out.println("You currently have " + initialBankAccounts + " Bank Accounts");
+
+		// Add Bank Account
+		driver.findElement(By.xpath("//span[contains(text(),'Add Bank Account')]")).click();
+
+		// Select ANZ (NZ) Bank Account
+		driver.findElement(By.id("xui-searchfield-1018-inputEl")).sendKeys("ANZ");
+		driver.findElement(By.id("component-1027")).click();
+		driver.findElement(By.xpath("//li[contains(text(),'ANZ (NZ)')]")).click();
+
+		// Passing the Account Name
+
+		driver.findElement(By.xpath("//input[@id='accountname-1037-inputEl']"))
+				.sendKeys(value.getProperty("AccountName"));
+		driver.findElement(By.id("accounttype-1039-bodyEl")).click();
+
+		// Select Account Type
+		Actions accountType = new Actions(driver);
+		accountType.moveByOffset(670, 125).click().build().perform();
+
+		// Passing the Account Number
+		driver.findElement(By.id("accountnumber-1068-inputEl")).sendKeys(value.getProperty("AccountNumber"));
+
+	}
+
+	@Then("^Bank account successfully added$")
+	public void bank_account_successfully_added() throws Throwable {
+
+		// Adding Bank Account Successful Message
+		String addSuccess = driver.findElement(By.cssSelector(".message")).getText();
+		String addValid = value.getProperty("AccountName") + " has been added.";
+		System.out.println(addSuccess);
+		System.out.println(addValid);
+		Assert.assertEquals(addSuccess.equals(addValid), true);
+
+		// Count the new number of Bank Accounts
+		int totalBankAccounts = driver.findElements(By.cssSelector(".bank")).size();
+		System.out.println("You now have " + totalBankAccounts + " Bank Accounts");
+	}
+
+	@Then("^Bank account details shown in Bank Accounts page$")
+	public void bank_account_details_shown_in_Bank_Accounts_page() throws Throwable {
+
+		// Check if new Bank Account details is displayed in Bank Accounts Page
+		driver.findElement(By.partialLinkText(value.getProperty("AccountName"))).isDisplayed();
+		driver.findElement(By.xpath("//span[contains(text(),'" + value.getProperty("AccountNumber") + "')]"))
+				.isDisplayed();
+	}
+
+}
