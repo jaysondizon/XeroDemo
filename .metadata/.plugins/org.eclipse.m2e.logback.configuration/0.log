@@ -482,3 +482,21 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact info.cukes:cu
 2019-08-01 18:42:06,947 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\main\resources
 2019-08-01 18:42:06,951 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-08-01 18:42:06,952 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\test\resources
+2019-08-08 09:30:32,981 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-08-08 09:32:52,161 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 09:32:52,162 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\main\resources
+2019-08-08 09:32:52,167 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 09:32:52,167 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\test\resources
+2019-08-08 19:53:29,206 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-08-08 20:00:03,904 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:00:03,905 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\main\resources
+2019-08-08 20:00:03,908 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:00:03,908 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\test\resources
+2019-08-08 20:00:42,815 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:00:42,815 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\main\resources
+2019-08-08 20:00:42,817 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:00:42,818 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\test\resources
+2019-08-08 20:03:06,884 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:03:06,884 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\main\resources
+2019-08-08 20:03:06,887 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-08 20:03:06,887 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\SeleniumCucumberBDDFramework\SeleniumCucumberBDDFramework\src\test\resources

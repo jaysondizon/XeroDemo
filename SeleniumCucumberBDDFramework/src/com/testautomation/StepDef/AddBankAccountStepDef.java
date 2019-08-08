@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.testautomation.Utility.Utility;
@@ -55,7 +54,8 @@ public class AddBankAccountStepDef {
 		driver.findElement(By.id("submitButton")).click();
 
 		// Complete authentication
-		driver.findElement(By.xpath("//input[@placeholder='Authentication code']")).sendKeys(value.getProperty("AuthKey"));
+		driver.findElement(By.xpath("//input[@placeholder='Authentication code']"))
+				.sendKeys(value.getProperty("AuthKey"));
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		// User successfully logged in
@@ -106,13 +106,11 @@ public class AddBankAccountStepDef {
 		driver.findElement(By.xpath("//li[contains(text(),'ANZ (NZ)')]")).click();
 
 		// Passing the Account Name
-
 		driver.findElement(By.xpath("//input[@id='accountname-1037-inputEl']")).sendKeys(value.getProperty("AccountName"));
-		driver.findElement(By.id("accounttype-1039-bodyEl")).click();
 
 		// Select Account Type
-		Actions accountType = new Actions(driver);
-		accountType.moveByOffset(670, 125).click().build().perform();
+		driver.findElement(By.id("accounttype-1039-bodyEl")).click();
+		driver.findElement(By.xpath("//li[contains(text(),'Everyday (day-to-day)')]")).click();
 
 		// Passing the Account Number
 		driver.findElement(By.id("accountnumber-1068-inputEl")).sendKeys(value.getProperty("AccountNumber"));
@@ -141,7 +139,8 @@ public class AddBankAccountStepDef {
 
 		// Check if new Bank Account details is displayed in Bank Accounts Page
 		driver.findElement(By.partialLinkText(value.getProperty("AccountName"))).isDisplayed();
-		driver.findElement(By.xpath("//span[contains(text(),'" + value.getProperty("AccountNumber") + "')]")).isDisplayed();
+		driver.findElement(By.xpath("//span[contains(text(),'" + value.getProperty("AccountNumber") + "')]"))
+				.isDisplayed();
 	}
 
 }
