@@ -141,6 +141,9 @@ public class AddBankAccountStepDef {
 		driver.findElement(By.partialLinkText(value.getProperty("AccountName"))).isDisplayed();
 		driver.findElement(By.xpath("//span[contains(text(),'" + value.getProperty("AccountNumber") + "')]"))
 				.isDisplayed();
+				
+		// Quit WebDriver
+		driver.quit();
 	}
 
 }
